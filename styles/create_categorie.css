@@ -122,6 +122,17 @@ h2 {
     pointer-events: none;
 }
 
+.btn-cancel{
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    border: 1px solid #b57edc;
+    background-color: #ffffff;
+    color: #6a0dad;
+
+    margin-right: 10px;
+}
+
 /* animation entrée */
 @keyframes slideDown {
     from {

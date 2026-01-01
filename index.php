@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="/styles/style.css">
 <section class="quick-access">
-    <h2>Accès rapide</h2>
+    <h2>Dashboard</h2>
 
     <div class="quick-access-grid">
         <a href="participants/index.php" class="quick-card card-primary">

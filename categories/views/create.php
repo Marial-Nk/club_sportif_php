@@ -38,7 +38,7 @@
     <!-- BOUTONS -->
     <div style="margin-top: 20px;">
         <button type="submit" class="btn-submit">Ajouter </button>
-        <a href="../index.php" class="btn-cancel">Annuler</a>
+        <a href="../index.php" class="btn-cancel" >Annuler</a>
     </div>
 
 </form>

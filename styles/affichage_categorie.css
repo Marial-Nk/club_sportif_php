@@ -1,9 +1,29 @@
-.courses-table {
-    width: 90%;
-    margin: 20px auto;
-    padding: 25px;
-    border-collapse: collapse;
+.body{
+    margin: 30px 10%;
+}
+.header-actions {
+    display: flex;
+    justify-content: space-between; /* gauche / droite */
+    align-items: center;
+    margin-bottom: 20px;
+}
 
+.btn-add {
+    padding: 10px 16px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.btn-add:hover {
+    background-color: #4e9f6e;
+}
+
+.courses-table {
+    width: 100%;
+    border-collapse: collapse;
     background-color: #f2f2f2;
     border: 1px solid #b57edc;
     border-radius: 30px;

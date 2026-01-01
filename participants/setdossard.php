@@ -4,7 +4,8 @@ $currentDate = date('Y-m-d');
 
 <link rel="stylesheet" href="../styles/edit_participant.css">
 
-<div>
+<div class="header">
+    <h2>Attribuer un dossard </h2>
     <?php require_once  '../back_to_home.php'; ?>
 </div>
 
@@ -98,7 +99,7 @@ $currentDate = date('Y-m-d');
     </div>
 
     <div>
-        <button type="reset">Réinitialiser</button>
+        <a href="../index.php" class="btn-cancel">Annuler</a>
         <button type="submit" class="btn-submit">Mettre à jour</button>
     </div>
 

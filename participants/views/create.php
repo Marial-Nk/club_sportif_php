@@ -1,10 +1,12 @@
 <link rel="stylesheet" href="../../styles/create_participant.css">
 
 <h2>Ajouter un nouveau participant </h2>
-
-<a href="../index.php" class="link-courses">
+<a href="index.php" class="link-courses">
     Voir les participants déjà enregistrés
 </a>
+
+
+<div id="toast" class="toast hidden"></div>
 
 <form method="post" class="participant-form"
       action="controllers/participant_action.php"
@@ -98,3 +100,4 @@
     </div>
 
 </form>
+

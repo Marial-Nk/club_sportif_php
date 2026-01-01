@@ -2,7 +2,7 @@
 
 <h2>Modifier un participant </h2>
 
-<a href="../index.php" class="link-courses">
+<a href="index.php" class="link-courses">
     Voir les participants déjà enregistrés
 </a>
 
