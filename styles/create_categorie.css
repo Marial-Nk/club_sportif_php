@@ -1,0 +1,136 @@
+body {
+    background-color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+h2 {
+    text-align: center;
+    margin: 30px 0 20px;
+}
+
+.link-courses {
+    margin-top: 20px;
+    color: #5b2ecc;           /* violet cohérent avec Supprimer */
+    font-weight: 600;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: all 0.25s ease;
+}
+
+.link-courses:hover {
+    color: #2ecc71;           /* vert Modifier */
+    border-bottom-color: #2ecc71;
+}
+
+
+.participant-form {
+    background-color: #f2f2f2;
+    max-width: 80%;
+    margin: 40px auto;
+    padding: 25px;
+
+    border: 1px solid #b57edc;
+    border-radius: 10px;
+
+    box-shadow: 0 4px 12px rgba(128, 0, 128, 0.15);
+}
+
+.participant-form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.participant-form small {
+    display: block;
+    font-weight: normal;
+    margin-bottom: 6px;
+    color: #555;
+}
+
+.participant-form input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+
+    border: 1px solid #b57edc;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.participant-form button {
+    padding: 10px 16px;
+    border-radius: 6px;
+    border: 1px solid #b57edc;
+    background-color: #ffffff;
+    color: #6a0dad;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+/* Bouton principal */
+.participant-form .btn-submit {
+    background-color: #28a745;
+    border-color: #28a745;
+    color: #ffffff;
+}
+
+.participant-form .btn-submit:hover {
+    background-color: #218838;
+    border-color: #218838;
+}
+
+.toast {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 320px;
+    max-width: 480px;
+    padding: 14px 18px;
+    border-radius: 8px;
+
+    background-color: #f5f5f7;            /* gris clair */
+    border: 2px solid #6c63ff;             /* violet principal */
+    color: #333;
+
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+
+    z-index: 9999;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+
+    animation: slideDown 0.35s ease;
+}
+
+/* SUCCÈS → même style, accent léger */
+.toast.success {
+    border-color: #6c63ff;
+}
+
+/* ERREUR → accent violet plus foncé */
+.toast.error {
+    border-color: #4b43c5;
+}
+
+/* caché */
+.toast.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* animation entrée */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -15px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+

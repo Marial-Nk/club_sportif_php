@@ -1,0 +1,106 @@
+/* Fond général */
+body {
+    background-color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Formulaire centré */
+.participant-form {
+    background-color: #f2f2f2;              /* gris clair */
+    max-width: 80%;                       /* largeur */
+    margin: 20px auto;                      /* centrage gauche-droite */
+    padding: 25px;
+
+    border: 1px solid #b57edc;              /* bordure violette fine */
+    border-radius: 10px;
+
+    box-shadow: 0 4px 12px rgba(128, 0, 128, 0.15); /* effet ombre */
+}
+
+/* Espacement entre les blocs */
+.participant-form > div {
+    margin-bottom: 18px;
+}
+
+/* Labels */
+.participant-form label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 6px;
+}
+
+/* Champs de formulaire */
+.participant-form input[type="text"],
+.participant-form input[type="number"],
+.participant-form input[type="date"],
+.participant-form select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+
+    border: 1px solid #b57edc;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+/* Boutons radio */
+.participant-form input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* Boutons */
+.participant-form button {
+    padding: 10px 16px;
+    border-radius: 6px;
+    border: 1px solid #b57edc;
+    background-color: #ffffff;
+    color: #6a0dad;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+/* Effet hover sur boutons */
+.participant-form button:hover {
+    background-color: #b57edc;
+    color: #ffffff;
+}
+
+/* Ligne identité : nom / prénom / genre */
+.identity-row {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+/* Largeur égale pour nom et prénom */
+.identity-row > div {
+    flex: 1;
+}
+
+/* Genre plus compact */
+.gender-group {
+    flex: 1.2;
+}
+
+/* Radios genre alignés */
+.gender-group label {
+    font-weight: normal;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+/* Bouton OK en vert */
+.participant-form .btn-submit {
+    background-color: #28a745;   /* vert */
+    border: 1px solid #28a745;
+    color: #ffffff;
+}
+
+/* Effet hover */
+.participant-form .btn-submit:hover {
+    background-color: #218838;
+    border-color: #218838;
+}
+

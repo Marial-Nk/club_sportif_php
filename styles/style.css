@@ -1,0 +1,78 @@
+
+.quick-access {
+    max-width: 100%;
+    margin: 40px auto;
+    padding: 10% ;
+}
+
+.quick-access h2 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    color: #222;
+    text-align: center;
+}
+
+/* Grille */
+.quick-access-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* 1 carte par ligne */
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+/* Carte */
+.quick-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 25px;
+    border-radius: 14px;
+    text-decoration: none;
+    background: #fff;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.quick-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* Contenu */
+.quick-card .icon {
+    font-size: 2.2rem;
+}
+
+.quick-card .title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #111;
+}
+
+.quick-card .desc {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* Variantes couleurs */
+.card-primary {
+    border-left: 6px solid #4CAF50;
+}
+
+.card-secondary {
+    border-left: 6px solid #673AB7;
+}
+
+.card-tertiary {
+    border-left: 6px solid #FF9800;
+}
+
+/* Responsive ajustements */
+@media (max-width: 500px) {
+    .quick-access h2 {
+        font-size: 1.5rem;
+    }
+}

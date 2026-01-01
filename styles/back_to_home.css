@@ -1,0 +1,10 @@
+
+.acces_rapide {
+    margin: 20px 45px ;
+    color: #5b2ecc;           /* violet cohérent avec Supprimer */
+    font-weight: 600;
+    display: block;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: all 0.25s ease;
+}
