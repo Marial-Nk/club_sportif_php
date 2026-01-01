@@ -8,7 +8,7 @@ class CategoryController
     public static function getAll(PDO $pdo): array
     {
         return $pdo
-            ->query("SELECT course_key, label FROM courses ORDER BY label")
+            ->query("SELECT * FROM courses ORDER BY label")
             ->fetchAll(PDO::FETCH_ASSOC);
     }
 

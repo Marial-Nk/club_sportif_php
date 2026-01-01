@@ -10,32 +10,40 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 $action = $_POST['action'] ?? '';
-
 try {
     switch ($action) {
 
         case 'create':
+
+
+            $participant = get_participant();
+
             ParticipantController::create(
                 $pdo,
-                trim($_POST['course_key'] ?? ''),
-                trim($_POST['course_label'] ?? '')
+                $participant
             );
             header('Location: ../index.php?status=created');
             break;
 
         case 'update':
+
+            $participant = get_participant();
+
+//            var_dump($participant); die();
+
             ParticipantController::update(
                 $pdo,
-                $_POST['course_key'] ?? '',
-                trim($_POST['course_label'] ?? '')
+                (int) $_POST['participant_id'] ,
+                $participant
             );
             header('Location: ../index.php?status=updated');
             break;
 
         case 'delete':
+
             ParticipantController::delete(
                 $pdo,
-                $_POST['course_key'] ?? ''
+                (int)$_POST['participant_id']
             );
             header('Location: ../index.php?status=deleted');
             break;
@@ -45,7 +53,24 @@ try {
     }
 
 } catch (Throwable $e) {
+
     header('Location: ../index.php?status=error');
+}
+
+
+function get_participant(){
+
+
+    $participant['last_name'] = trim($_POST['last_name'] ?? '');
+    $participant['first_name'] = trim($_POST['first_name'] ?? '');
+    $participant['birth_date'] = trim($_POST['birth_date'] ?? '');
+    $participant['gender'] = trim($_POST['gender'] ?? '-');
+    $participant['nationality'] = trim($_POST['nationality'] ?? '-');
+    $participant['category'] = trim($_POST['category'] ?? '');
+    $participant['club'] =  empty($_POST['club']) ?  '-' :  trim($_POST['club'] );
+
+    return $participant;
+
 }
 
 exit;

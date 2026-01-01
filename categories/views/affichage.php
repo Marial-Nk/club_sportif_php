@@ -70,7 +70,6 @@
     </tbody>
 </table>
 
-<script src="../public/js/toast.js"></script>
 
 <?php if (isset($_GET['status']) && $_GET['status'] === 'success'): ?>
     <script>

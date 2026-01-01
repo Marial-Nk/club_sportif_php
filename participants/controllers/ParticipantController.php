@@ -1,10 +1,5 @@
 <?php
 
-class ParticipantController
-{
-
-}
-
 declare(strict_types=1);
 
 require_once __DIR__ . '/../../config/db.php';
@@ -14,7 +9,10 @@ class ParticipantController
     public static function getAll(PDO $pdo): array
     {
         return $pdo
-            ->query("SELECT *   FROM participants ORDER BY first_name, last_name")
+            ->query("SELECT  participants.id as id , last_name, first_name, gender, birth_date, 
+                                   courses.label as category, club, nationality, uci_code, dossard
+                    FROM participants inner join courses on courses.id = participants.course_id 
+                    ORDER BY first_name, last_name")
             ->fetchAll(PDO::FETCH_ASSOC);
     }
 
@@ -29,10 +27,11 @@ class ParticipantController
         return $stmt->fetch(PDO::FETCH_ASSOC) ?: null;
     }
 
-    public static function create(PDO $pdo, string $key, string $label): void
+    public static function create(PDO $pdo, array $participant)
     {
         $stmt = $pdo->prepare("
-            INSERT INTO participants (last_name,
+            INSERT INTO participants (
+                last_name,
                 first_name,
                 gender,
                 birth_date,
@@ -52,19 +51,19 @@ class ParticipantController
                 :dossard)
         ");
         $stmt->execute([
-            'last_name'   => $data['last_name'],
-            'first_name'  => $data['first_name'],
-            'gender'      => $data['gender'],
-            'birth_date'  => $data['birth_date'],
-            'course_id'    => $data['course_id'],
-            'club'        => $data['club'],
-            'nationality' => $data['nationality'],
-            'uci_code'    => $data['uci_code'],
-            'dossard'     => $data['dossard'],
+            'last_name'   => $participant['last_name'],
+            'first_name'  => $participant['first_name'],
+            'gender'      => $participant['gender'],
+            'birth_date'  => $participant['birth_date'],
+            'course_id'    => $participant['category'],
+            'club'        => $participant['club'],
+            'nationality' => $participant['nationality'],
+            'uci_code'    => $participant['uci_code'],
+            'dossard'     => $participant['dossard'],
         ]);
     }
 
-    public static function update(PDO $pdo, int $id, array $data): void
+    public static function update(PDO $pdo, int $id, array  $participant): void
     {
         $stmt = $pdo->prepare("
             UPDATE participants SET
@@ -72,20 +71,24 @@ class ParticipantController
                 first_name  = :first_name,
                 gender      = :gender,
                 birth_date  = :birth_date,
-                category    = :category,
+                course_id    = :course_id,
                 club        = :club,
-                nationality = :nationality
+                nationality = :nationality,
+                uci_code    = :uci_code,
+                dossard     = :dossard
             WHERE id = :id
         ");
         $stmt->execute([
-            'id'          => $id,
-            'last_name'   => $data['last_name'],
-            'first_name'  => $data['first_name'],
-            'gender'      => $data['gender'],
-            'birth_date'  => $data['birth_date'],
-            'category'    => $data['category'],
-            'club'        => $data['club'],
-            'nationality' => $data['nationality'],
+            'id'           => $id,
+            'last_name'   => $participant['last_name'],
+            'first_name'  => $participant['first_name'],
+            'gender'      => $participant['gender'],
+            'birth_date'  => $participant['birth_date'],
+            'course_id'    => $participant['category'],
+            'club'        => $participant['club'],
+            'nationality' => $participant['nationality'],
+            'uci_code'    => $participant['uci_code'],
+            'dossard'     => $participant['dossard'],
         ]);
     }
 

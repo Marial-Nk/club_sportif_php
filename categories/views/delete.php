@@ -4,7 +4,7 @@
 
     <input type="hidden" name="action" value="delete">
     <input type="hidden" name="course_key"
-           value="<?= htmlspecialchars($course['course_key']) ?>">
+           value="<?= htmlspecialchars($participant['course_key']) ?>">
 
     <button class="btn-delete">Supprimer</button>
 </form>
