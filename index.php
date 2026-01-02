@@ -1,13 +1,13 @@
 <link rel="stylesheet" href="/styles/style.css">
 <section class="quick-access">
-    <h2>Accès rapide</h2>
+    <h2>MALANGWA</h2>
 
     <div class="quick-access-grid">
-        <a href="participants/create.php" class="quick-card card-primary">
-            Inscrire un participant
+        <a href="participants/index.php" class="quick-card card-primary">
+            Gérer les participants
         </a>
 
-        <a href="participants/edit.php" class="quick-card card-secondary">
+        <a href="participants/setdossard.php" class="quick-card card-secondary">
             Attribuer les dossards
         </a>
 
@@ -16,3 +16,5 @@
         </a>
     </div>
 </section>
+
+<?php require 'footer.php'; ?>

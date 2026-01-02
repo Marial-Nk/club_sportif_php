@@ -10,7 +10,7 @@ h2 {
 
 .link-courses {
     margin-top: 20px;
-    color: #5b2ecc;           /* violet cohérent avec Supprimer */
+    color: #5b2ecc;
     font-weight: 600;
     display: block;
     text-align: center;
@@ -20,7 +20,7 @@ h2 {
 }
 
 .link-courses:hover {
-    color: #2ecc71;           /* vert Modifier */
+    color: #2ecc71;
     border-bottom-color: #2ecc71;
 }
 
@@ -92,8 +92,8 @@ h2 {
     padding: 14px 18px;
     border-radius: 8px;
 
-    background-color: #f5f5f7;            /* gris clair */
-    border: 2px solid #6c63ff;             /* violet principal */
+    background-color: #f5f5f7;
+    border: 2px solid #6c63ff;
     color: #333;
 
     font-size: 14px;
@@ -120,6 +120,17 @@ h2 {
 .toast.hidden {
     opacity: 0;
     pointer-events: none;
+}
+
+.btn-cancel{
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    border: 1px solid #b57edc;
+    background-color: #ffffff;
+    color: #6a0dad;
+
+    margin-right: 10px;
 }
 
 /* animation entrée */

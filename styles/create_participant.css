@@ -1,21 +1,37 @@
-/* Fond général */
 body {
     background-color: #ffffff;
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+}
+
+h2 {
+    text-align: center;
+    margin: 30px 0 20px;
+}
+
+.link-courses {
+    margin-top: 20px;
+    color: #5b2ecc;
+    font-weight: 600;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: all 0.25s ease;
+}
+
+.link-courses:hover {
+    color: #2ecc71;
+    border-bottom-color: #2ecc71;
 }
 
 /* Formulaire centré */
 .participant-form {
-    background-color: #f2f2f2;              /* gris clair */
-    max-width: 80%;                       /* largeur */
-    margin: 20px auto;                      /* centrage gauche-droite */
-    padding: 25px;
-
-    border: 1px solid #b57edc;              /* bordure violette fine */
+    background-color: #f2f2f2;
+    max-width: 80%;
+    border: 1px solid #b57edc;
+    padding: 20px;
     border-radius: 10px;
-
+    margin: 40px auto;
     box-shadow: 0 4px 12px rgba(128, 0, 128, 0.15); /* effet ombre */
 }
 
@@ -96,11 +112,23 @@ body {
     background-color: #28a745;   /* vert */
     border: 1px solid #28a745;
     color: #ffffff;
+    padding: 10px 16px;
 }
 
 /* Effet hover */
 .participant-form .btn-submit:hover {
     background-color: #218838;
     border-color: #218838;
+}
+
+.btn-cancel{
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    border: 1px solid #b57edc;
+    background-color: #ffffff;
+    color: #6a0dad;
+
+    margin-right: 10px;
 }
 

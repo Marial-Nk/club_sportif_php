@@ -1,6 +1,7 @@
 
 <link rel="stylesheet" href="../../styles/create_categorie.css">
 
+// Affichage du formulaire de création
 <h2>Ajouter une nouvelle catégorie</h2>
 <a href="../index.php" class="link-courses">
     Voir les courses déjà enregistrées
@@ -38,7 +39,9 @@
     <!-- BOUTONS -->
     <div style="margin-top: 20px;">
         <button type="submit" class="btn-submit">Ajouter </button>
-        <a href="../index.php" class="btn-cancel">Annuler</a>
+        <a href="../index.php" class="btn-cancel" >Annuler</a>
     </div>
 
 </form>
+<?php require '../../footer.php';
+?>

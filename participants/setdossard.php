@@ -5,7 +5,8 @@ require_once '../config/db.php';
 require_once 'controllers/ParticipantController.php';
 
 $participants = ParticipantController::getAll($pdo);
+$currentDate = date('Y-m-d');
 
-require 'views/affichage.php';
+require 'views/setdossard.php';
 require '../footer.php';
 

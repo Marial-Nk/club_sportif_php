@@ -12,6 +12,7 @@
 >
 
     <input type="hidden" name="action" value="update">
+    <input type="hidden" name="course_id" value="<?= htmlspecialchars($course['id'])  ?>">
     <!-- CLÉ -->
     <div>
         <label>
@@ -40,3 +41,6 @@
     </div>
 
 </form>
+
+<?php require '../../footer.php';
+?>

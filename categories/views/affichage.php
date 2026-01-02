@@ -1,79 +1,80 @@
+<!-- Feuille de style pour l’affichage des catégories -->
 <link rel="stylesheet" href="../../styles/affichage_categorie.css">
 
-<div id="toast" class="toast hidden"></div>
-<div>
-    <div>
-        <?php require_once  '../back_to_home.php'; ?>
-    </div>
-    <div>
-        <a href="views/create.php"> Ajouter une nouvelle catégorie</a>
-    </div>
-</div>
+<!-- Script pour afficher les messages toast -->
+<script src="../../public/js/toast.js"></script>
 
-<table class="courses-table">
-    <thead>
-    <tr>
-        <th>Clé</th>
-        <th>Libellé</th>
-        <th>Action</th>
-    </tr>
-    </thead>
+<!-- Zone toast affichée seulement si un statut est présent -->
+<?php if (isset($_GET['status'])) :  ?> <div id="toast" class="toast hidden"></div> <?php endif; ?>
 
-    <tbody>
-    <?php if (empty($courses)): ?>
+<div class="body">
+
+    <div class="header-actions">
+        <div class="left">
+            <?php require_once  '../back_to_home.php'; ?>
+        </div>
+        <div class="right">
+            <a href="views/create.php" class="btn-add"> Ajouter une nouvelle catégorie</a>
+        </div>
+    </div>
+
+    <table class="courses-table">
+        <thead>
         <tr>
-            <td colspan="3" style="text-align:center; color:#666;">
-                Aucune course enregistrée
-            </td>
+            <th>Clé</th>
+            <th>Libellé</th>
+            <th>Action</th>
         </tr>
-    <?php else: ?>
-        <?php foreach ($courses as $course): ?>
+        </thead>
+
+        <tbody>
+        <?php if (empty($courses)): ?>
             <tr>
-                <td>
-                    <code><?= htmlspecialchars($course['course_key']) ?></code>
+                <td colspan="3" style="text-align:center; color:#666;">
+                    Aucune course enregistrée
                 </td>
-                <td>
-                    <?= htmlspecialchars($course['label']) ?>
-                </td>
-                <td class="action-cell">
-
-                    <a
-                        href="edit.php?key=<?= urlencode($course['course_key']) ?>"
-                        class="btn-action btn-edit"
-                    >
-                        Modifier
-                    </a>
-
-                    <form
-                        method="post"
-                        action="controllers/category_action.php"
-                        class="inline-form"
-                        onsubmit="return confirm('Supprimer cette category ?');"
-                    >
-                        <input type="hidden" name="action" value="delete">
-                        <input
-                            type="hidden"
-                            name="course_key"
-                            value="<?= htmlspecialchars($course['course_key']) ?>"
-                        >
-                        <button type="submit" class="btn-action btn-delete">
-                            Supprimer
-                        </button>
-                    </form>
-
-                </td>
-
             </tr>
-        <?php endforeach; ?>
+        <?php else: ?>
+            <?php foreach ($courses as $course): ?>
+                <tr>
+                    <td>
+                        <code><?= htmlspecialchars($course['course_key']) ?></code>
+                    </td>
+                    <td>
+                        <?= htmlspecialchars($course['label']) ?>
+                    </td>
+                    <td class="action-cell">
 
-    <?php endif; ?>
-    </tbody>
-</table>
+                        <a
+                                href="edit.php?key=<?= urlencode($course['course_key']) ?>"
+                                class="btn-action btn-edit"
+                        >
+                            Modifier
+                        </a>
 
-<script src="../public/js/toast.js"></script>
+                        <form
+                                method="post"
+                                action="controllers/category_action.php"
+                                class="inline-form"
+                                onsubmit="return confirm('Supprimer cette category ?');"
+                        >
+                            <input type="hidden" name="action" value="delete">
+                            <input
+                                    type="hidden"
+                                    name="course_key"
+                                    value="<?= htmlspecialchars($course['course_key']) ?>"
+                            >
+                            <button type="submit" class="btn-action btn-delete">
+                                Supprimer
+                            </button>
+                        </form>
 
-<?php if (isset($_GET['status']) && $_GET['status'] === 'success'): ?>
-    <script>
-        showToast("La course a été ajoutée avec succès ", "success", 3000);
-    </script>
-<?php endif; ?>
+                    </td>
+
+                </tr>
+            <?php endforeach; ?>
+
+        <?php endif; ?>
+        </tbody>
+    </table>
+</div>
