@@ -6,8 +6,6 @@
 </a>
 
 
-<div id="toast" class="toast hidden"></div>
-
 <form method="post" class="participant-form"
       action="controllers/participant_action.php"
       onsubmit="return confirm('Voulez-vous créer ce participant ?');"
@@ -100,4 +98,5 @@
     </div>
 
 </form>
+
 

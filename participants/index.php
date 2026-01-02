@@ -7,4 +7,5 @@ require_once 'controllers/ParticipantController.php';
 $participants = ParticipantController::getAll($pdo);
 
 require 'views/affichage.php';
+require '../footer.php';
 

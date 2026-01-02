@@ -29,13 +29,20 @@ try {
 
             $participant = get_participant();
 
-//            var_dump($participant); die();
+//            var_dump( $participant); die();
 
             ParticipantController::update(
                 $pdo,
                 (int) $_POST['participant_id'] ,
                 $participant
             );
+
+            // si attribution dossard
+            if(isset($_POST['dossard'] )){
+                header('Location: ../setdossard.php?status=updated');
+                exit;
+            }
+
             header('Location: ../index.php?status=updated');
             break;
 
@@ -53,6 +60,11 @@ try {
     }
 
 } catch (Throwable $e) {
+    // si attribution dossard
+    if(isset($_POST['dossard'] )){
+        header('Location: ../setdossard.php?status=error');
+        exit;
+    }
 
     header('Location: ../index.php?status=error');
 }
@@ -68,6 +80,12 @@ function get_participant(){
     $participant['nationality'] = trim($_POST['nationality'] ?? '-');
     $participant['category'] = trim($_POST['category'] ?? '');
     $participant['club'] =  empty($_POST['club']) ?  '-' :  trim($_POST['club'] );
+
+    // si attribution dossard
+    if(isset($_POST['dossard'] )){ $participant['dossard'] = $_POST['dossard']; }
+    if(isset($_POST['uci_code'] )){ $participant['uci_code'] = $_POST['uci_code']; }
+    $participant['is_paid'] = isset($_POST['paid'] ) ?  1 : 0;
+    if(isset($_POST['category_id'] )){ $participant['category'] = $_POST['category_id']; }
 
     return $participant;
 

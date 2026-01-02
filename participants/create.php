@@ -65,3 +65,5 @@ $countries = [
 ];
 
 require 'views/create.php';
+
+require '../footer.php';

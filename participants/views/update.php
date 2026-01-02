@@ -99,3 +99,6 @@
     </div>
 
 </form>
+
+<?php require '../../footer.php';
+?>

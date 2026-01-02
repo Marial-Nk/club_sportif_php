@@ -7,3 +7,4 @@ require_once 'controllers/CategoryController.php';
 $courses = CategoryController::getAll($pdo);
 
 require 'views/affichage.php';
+require '../footer.php';

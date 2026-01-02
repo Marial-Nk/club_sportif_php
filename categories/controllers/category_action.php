@@ -24,8 +24,12 @@ try {
             break;
 
         case 'update':
+
+//            var_dump($_POST); die();
+
             CategoryController::update(
                 $pdo,
+                (int)$_POST['course_id'] ,
                 $_POST['course_key'] ?? '',
                 trim($_POST['course_label'] ?? '')
             );

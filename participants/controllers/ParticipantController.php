@@ -75,7 +75,8 @@ class ParticipantController
                 club        = :club,
                 nationality = :nationality,
                 uci_code    = :uci_code,
-                dossard     = :dossard
+                dossard     = :dossard,
+                is_paid     = :is_paid
             WHERE id = :id
         ");
         $stmt->execute([
@@ -89,6 +90,7 @@ class ParticipantController
             'nationality' => $participant['nationality'],
             'uci_code'    => $participant['uci_code'],
             'dossard'     => $participant['dossard'],
+            'is_paid'     => $participant['is_paid'],
         ]);
     }
 
@@ -99,5 +101,23 @@ class ParticipantController
             WHERE id = :id
         ");
         $stmt->execute(['id' => $id]);
+    }
+
+    public static function getAllLikeName(PDO $pdo, string $q){
+
+        $stmt = $pdo->prepare("
+            SELECT p.*, courses.label as course 
+            FROM participants as p inner join courses on courses.id = p.course_id
+            WHERE p.last_name LIKE :q
+               OR p.first_name LIKE :q
+            ORDER BY p.last_name ASC
+            LIMIT 10
+        ");
+
+        $stmt->execute([
+            ':q' => '%' . $q . '%'
+        ]);
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }

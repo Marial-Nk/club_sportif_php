@@ -15,7 +15,7 @@ class CategoryController
     public static function getOne(PDO $pdo, string $key): ?array
     {
         $stmt = $pdo->prepare("
-            SELECT course_key, label
+            SELECT *
             FROM courses
             WHERE course_key = :key
         ");
@@ -35,13 +35,16 @@ class CategoryController
         ]);
     }
 
-    public static function update(PDO $pdo, string $key, string $label): void
+    public static function update(PDO $pdo, int $id, string $key,string $label): void
     {
+//        var_dump($id, $key, $label); die();
         $stmt = $pdo->prepare("
-            UPDATE courses SET label = :label
-            WHERE course_key = :key
+            UPDATE courses SET  label = :label,
+            course_key = :key
+            WHERE id = :id
         ");
         $stmt->execute([
+            'id' => $id,
             'key' => $key,
             'label' => $label
         ]);

@@ -1,6 +1,8 @@
 <link rel="stylesheet" href="../../styles/affichage_categorie.css">
 
-<div id="toast" class="toast hidden"></div>
+<script src="../../public/js/toast.js"></script>
+<?php if (isset($_GET['status'])) :  ?> <div id="toast" class="toast hidden"></div> <?php endif; ?>
+
 <div class="body">
 
     <div class="header-actions">
@@ -72,9 +74,3 @@
         </tbody>
     </table>
 </div>
-
-<?php if (isset($_GET['status']) && $_GET['status'] === 'success'): ?>
-    <script>
-        showToast("La course a été ajoutée avec succès ", "success", 3000);
-    </script>
-<?php endif; ?>
