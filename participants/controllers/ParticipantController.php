@@ -1,11 +1,16 @@
 <?php
-
+// Active le typage strict
 declare(strict_types=1);
 
 require_once __DIR__ . '/../../config/db.php';
 
 class ParticipantController
 {
+    /**
+     * Récupère tous les participants
+     * @param PDO $pdo
+     * @return array
+     */
     public static function getAll(PDO $pdo): array
     {
         return $pdo
@@ -16,6 +21,12 @@ class ParticipantController
             ->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    /**
+     * Récupère un participant à partir de son id
+     * @param PDO $pdo
+     * @param string $id
+     * @return array|null
+     */
     public static function getOne(PDO $pdo, string $id): ?array
     {
         $stmt = $pdo->prepare("
@@ -27,6 +38,12 @@ class ParticipantController
         return $stmt->fetch(PDO::FETCH_ASSOC) ?: null;
     }
 
+    /**
+     * Crée un nouveau participant
+     * @param PDO $pdo
+     * @param array $participant
+     * @return void
+     */
     public static function create(PDO $pdo, array $participant)
     {
         $stmt = $pdo->prepare("
@@ -63,6 +80,13 @@ class ParticipantController
         ]);
     }
 
+    /**
+     * Mets à jour les infos d'un participant
+     * @param PDO $pdo
+     * @param int $id
+     * @param array $participant
+     * @return void
+     */
     public static function update(PDO $pdo, int $id, array  $participant): void
     {
         $stmt = $pdo->prepare("
@@ -94,6 +118,12 @@ class ParticipantController
         ]);
     }
 
+    /**
+     * Supprime un participant
+     * @param PDO $pdo
+     * @param int $id
+     * @return void
+     */
     public static function delete(PDO $pdo, int $id): void
     {
         $stmt = $pdo->prepare("
@@ -103,6 +133,12 @@ class ParticipantController
         $stmt->execute(['id' => $id]);
     }
 
+    /**
+     * Récpère le participant en fonction du nom ou prénom
+     * @param PDO $pdo
+     * @param string $q
+     * @return array
+     */
     public static function getAllLikeName(PDO $pdo, string $q){
 
         $stmt = $pdo->prepare("

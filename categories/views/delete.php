@@ -1,3 +1,4 @@
+// Formulaire de suppression avec confirmation
 <form method="post"
       action="controllers/category_action.php"
       class="delete-form">

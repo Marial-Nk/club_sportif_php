@@ -1,6 +1,10 @@
+<!-- Feuille de style pour l’affichage des catégories -->
 <link rel="stylesheet" href="../../styles/affichage_categorie.css">
 
+<!-- Script pour afficher les messages toast -->
 <script src="../../public/js/toast.js"></script>
+
+<!-- Zone toast affichée seulement si un statut est présent -->
 <?php if (isset($_GET['status'])) :  ?> <div id="toast" class="toast hidden"></div> <?php endif; ?>
 
 <div class="body">

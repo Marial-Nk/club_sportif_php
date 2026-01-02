@@ -1,16 +1,24 @@
 <?php
+// Active le typage strict
 declare(strict_types=1);
 
+// Connexion à la base de données
 require_once __DIR__ . '/../../config/db.php';
+
+// Contrôleur des participants
 require_once __DIR__ . '/ParticipantController.php';
 
+// Autorise uniquement les requêtes POST
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header('Location: ../index.php');
     exit;
 }
 
+// Action envoyée par le formulaire
 $action = $_POST['action'] ?? '';
+
 try {
+    // Choix de l’action à exécuter
     switch ($action) {
 
         case 'create':
@@ -60,7 +68,7 @@ try {
     }
 
 } catch (Throwable $e) {
-    // si attribution dossard
+    // En cas d’erreur, retour à l’index
     if(isset($_POST['dossard'] )){
         header('Location: ../setdossard.php?status=error');
         exit;
@@ -69,7 +77,10 @@ try {
     header('Location: ../index.php?status=error');
 }
 
-
+/**
+ * get infos participant envoyées via un formulaire
+ * @return array
+ */
 function get_participant(){
 
 

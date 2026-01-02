@@ -1,8 +1,13 @@
+<!-- Feuille de style pour l’affichage -->
 <link rel="stylesheet" href="../../styles/affichage_categorie.css">
 
+<!-- Script pour les messages toast -->
 <script src="../../public/js/toast.js"></script>
-<?php if (isset($_GET['status'])) :  ?> <div id="toast" class="toast hidden"></div> <?php endif; ?>
 
+<!-- Zone toast affichée s’il y a un statut -->
+<?php if (isset($_GET['status'])) :  ?>
+    <div id="toast" class="toast hidden"></div>
+<?php endif; ?>
 
 <div class="body">
     <div class="header-actions">

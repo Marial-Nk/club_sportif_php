@@ -1,6 +1,7 @@
 
 <link rel="stylesheet" href="../../styles/create_categorie.css">
 
+// Affichage du formulaire de création
 <h2>Ajouter une nouvelle catégorie</h2>
 <a href="../index.php" class="link-courses">
     Voir les courses déjà enregistrées

@@ -3,7 +3,7 @@
 }
 .header-actions {
     display: flex;
-    justify-content: space-between; /* gauche / droite */
+    justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
 }
@@ -50,12 +50,10 @@
     border-bottom: 1px solid #ddd;
 }
 
-/* ligne formulaire */
 .form-row {
     background-color: #f9f9fb;
 }
 
-/* colonne action */
 .action-cell {
     text-align: center;
     width: 120px;
@@ -75,7 +73,6 @@
     background-color: #584fe0;
 }
 
-/* cellule actions */
 .action-cell {
     display: flex;
     gap: 10px;
@@ -83,12 +80,10 @@
     align-items: center;
 }
 
-/* formulaire inline */
 .inline-form {
     margin: 0;
 }
 
-/* base bouton */
 .btn-action {
     padding: 6px 12px;
     font-size: 13px;
@@ -100,7 +95,6 @@
     text-decoration: none;
 }
 
-/* MODIFIER = VERT */
 .btn-edit {
     border-color: #2e9f6e;
     color: #2e9f6e;
@@ -110,7 +104,6 @@
     background-color: #e6f4ee;
 }
 
-/* SUPPRIMER = VIOLET */
 .btn-delete {
     border-color: #6c63ff;
     color: #6c63ff;
@@ -130,8 +123,8 @@
     padding: 14px 18px;
     border-radius: 8px;
 
-    background-color: #f5f5f7;            /* gris clair */
-    border: 2px solid #6c63ff;             /* violet principal */
+    background-color: #f5f5f7;
+    border: 2px solid #6c63ff;
     color: #333;
 
     font-size: 14px;
@@ -144,23 +137,19 @@
     animation: slideDown 0.35s ease;
 }
 
-/* SUCCÈS → même style, accent léger */
 .toast.success {
     border-color: #6c63ff;
 }
 
-/* ERREUR → accent violet plus foncé */
 .toast.error {
     border-color: #4b43c5;
 }
 
-/* caché */
 .toast.hidden {
     opacity: 0;
     pointer-events: none;
 }
 
-/* animation entrée */
 @keyframes slideDown {
     from {
         opacity: 0;
